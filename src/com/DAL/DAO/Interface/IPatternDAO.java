@@ -1,5 +1,12 @@
 package com.DAL.DAO.Interface;
 
-public interface IPatternDAO {
+import java.util.Collection;
 
+import com.DTO.PatternDTO;
+
+public interface IPatternDAO {
+	Collection<PatternDTO> getAllPatterns();
+	boolean deletPattern(PatternDTO dto);
+	boolean updatePattern(PatternDTO dto);
+	boolean addPattern(PatternDTO dto);
 }
