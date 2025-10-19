@@ -1,5 +1,9 @@
 package com.BL.Facade;
 
-public interface IBLFacade {
+import com.BL.BO.Interface.IPatternBO;
+import com.BL.BO.Interface.IRootBO;
+import com.BL.BO.Interface.IWordBO;
+
+public interface IBLFacade extends IPatternBO, IRootBO, IWordBO {
 
 }
