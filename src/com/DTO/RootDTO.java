@@ -7,11 +7,6 @@ public class RootDTO {
 		super();
 		this.rootLetters = rootLetters;
 	}
-	
-	public RootDTO(String rootLetters) {
-		super();
-		this.rootLetters = rootLetters;
-	}
 
 	public String getRootLetters() {
 		return rootLetters;
