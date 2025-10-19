@@ -58,11 +58,6 @@ public class DALFacade implements IDALFacade {
 	}
 
 	@Override
-	public boolean deletPattern(PatternDTO dto) {
-		return patternDAO.deletPattern(dto);
-	}
-
-	@Override
 	public boolean updatePattern(PatternDTO dto) {
 		return patternDAO.updatePattern(dto);
 	}
@@ -105,6 +100,11 @@ public class DALFacade implements IDALFacade {
 	@Override
 	public boolean updateWordRootId(String arabic_form, int newRootId) {
 		return wordDAO.updateWordRootId(arabic_form, newRootId);
+	}
+
+	@Override
+	public boolean deletePattern(PatternDTO dto) {
+		return patternDAO.deletePattern(dto);
 	}
 
 }

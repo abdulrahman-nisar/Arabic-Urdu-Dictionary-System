@@ -7,6 +7,7 @@ import com.BL.BO.Interface.IPatternBO;
 import com.BL.BO.Interface.IRootBO;
 import com.BL.BO.Interface.IWordBO;
 import com.DTO.PatternDTO;
+import com.DTO.RootDTO;
 import com.DTO.WordDTO;
 
 public class BLFacade implements IBLFacade {
@@ -23,33 +24,19 @@ public class BLFacade implements IBLFacade {
  
 	@Override
 	public Collection<PatternDTO> getAllPatterns() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean deletPattern(PatternDTO dto) {
-		// TODO Auto-generated method stub
-		return false;
+		return patternBO.getAllPatterns();
 	}
 
 	@Override
 	public boolean updatePattern(PatternDTO dto) {
-		// TODO Auto-generated method stub
-		return false;
+		return patternBO.updatePattern(dto);
 	}
 
 	@Override
 	public boolean addPattern(PatternDTO dto) {
-		// TODO Auto-generated method stub
-		return false;
+		return patternBO.addPattern(dto);
 	}
 
-	@Override
-	public boolean isValidRoot(String rootLetters) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 	@Override
 	public boolean addWord(WordDTO word) {
@@ -84,6 +71,41 @@ public class BLFacade implements IBLFacade {
 	@Override
 	public boolean updateWordRootId(String arabic_form, int newRootId) {
 		return wordBO.updateWordRootId(arabic_form, newRootId);
+	}
+
+	@Override
+	public boolean deletePattern(PatternDTO dto) {
+		return patternBO.deletePattern(dto);
+	}
+
+	@Override
+	public List<RootDTO> getAllRoots() {
+		return rootBO.getAllRoots();
+	}
+
+	@Override
+	public RootDTO getRootById(int rootId) {
+		return rootBO.getRootById(rootId);
+	}
+
+	@Override
+	public boolean addRoot(RootDTO root) {
+		return rootBO.addRoot(root);
+	}
+
+	@Override
+	public boolean deleteRoot(String rootLetters) {
+		return rootBO.deleteRoot(rootLetters);
+	}
+
+	@Override
+	public boolean updateRoot(String oldRootLetters, String newRootLetters) {
+		return rootBO.updateRoot(oldRootLetters, newRootLetters);
+	}
+
+	@Override
+	public int getRootIdByLetters(String rootLetters) {
+		return rootBO.getRootIdByLetters(rootLetters);
 	}
 
 }
