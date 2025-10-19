@@ -1,4 +1,4 @@
-package com.BL.BO.Implemantation;
+package com.BL.BO.Implementation;
 
 import com.BL.BO.Interface.IWordBO;
 
