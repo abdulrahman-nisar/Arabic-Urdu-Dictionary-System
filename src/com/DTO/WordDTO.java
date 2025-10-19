@@ -20,6 +20,7 @@ public class WordDTO {
 		this.root_id = root_id;	
 	}
 	
+	
 	public String getArabic_form() {
 		return arabic_form;
 	}
