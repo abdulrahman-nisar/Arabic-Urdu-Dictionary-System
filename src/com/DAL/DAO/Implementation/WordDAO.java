@@ -86,12 +86,7 @@ public class WordDAO implements IWordDAO{
 
 	}
 
-	public boolean updateWord(WordDTO word) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
-
+	@Override
 	public boolean deleteWord(String arabic_form) {
 		String query = "DELETE FROM words WHERE arabic_form = ?";
 		try {
@@ -102,6 +97,57 @@ public class WordDAO implements IWordDAO{
 			return rows_affected > 0;
 			
 		}catch(SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	@Override
+	public boolean upateWordMeaning(String arabic_form, String newUrduMeaning) {
+		String query = "UPDATE words SET urdu_meaning = ? WHERE arabic_form = ?";
+		try {
+			Connection connection = DatabaseConfig.getConnection();
+			PreparedStatement stmt = connection.prepareStatement(query);
+			stmt.setString(1, newUrduMeaning);
+			stmt.setString(2, arabic_form);
+			int rows_affected = stmt.executeUpdate();
+			return rows_affected > 0;
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updateWordPartOfSpeech(String arabic_form, String newPartOfSpeech) {
+		String query = "UPDATE words SET part_of_speech = ? WHERE arabic_form = ?";
+		try {
+			Connection connection = DatabaseConfig.getConnection();
+			PreparedStatement stmt = connection.prepareStatement(query);
+			stmt.setString(1, newPartOfSpeech);
+			stmt.setString(2, arabic_form);
+			int rows_affected = stmt.executeUpdate();
+			return rows_affected > 0;
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updateWordRootId(String arabic_form, int newRootId) {
+		String query = "UPDATE words SET root_id = ? WHERE arabic_form = ?";
+		try {
+			Connection connection = DatabaseConfig.getConnection();
+			PreparedStatement stmt = connection.prepareStatement(query);
+			stmt.setInt(1, newRootId);
+			stmt.setString(2, arabic_form);
+			int rows_affected = stmt.executeUpdate();
+			return rows_affected > 0;
+		} catch(SQLException e) {
+			System.out.println("Error updating word root ID in database.");
 			e.printStackTrace();
 			return false;
 		}

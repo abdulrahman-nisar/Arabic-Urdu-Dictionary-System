@@ -11,4 +11,5 @@ public interface IRootDAO {
 	public boolean addRoot(RootDTO root);
 	public boolean deleteRoot(String rootLetters);
 	public boolean updateRoot(String oldRootLetters, String newRootLetters);
+	public int getRootIdByLetters(String rootLetters);
 }

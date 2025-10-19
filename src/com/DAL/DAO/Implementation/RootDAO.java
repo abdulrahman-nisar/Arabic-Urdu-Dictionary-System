@@ -107,5 +107,24 @@ public class RootDAO implements IRootDAO {
 			return false;
 		}
 	}
+
+	@Override
+	public int getRootIdByLetters(String rootLetters) {
+		String query = "SELECT id FROM roots WHERE root_letters = ?";
+
+		try(PreparedStatement stmt = connection.prepareStatement(query)){
+			stmt.setString(1, rootLetters);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs.next()) {
+				return rs.getInt("id");
+			}
+			return -1; // Return -1 if root not found
+		} catch (SQLException e) {
+			System.out.println("Error retrieving root ID by letters from database.");
+			e.printStackTrace();
+			return -1;
+		}
+	}
 	
 }

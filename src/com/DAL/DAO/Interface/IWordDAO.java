@@ -6,10 +6,11 @@ import com.DTO.WordDTO;
 
 public interface IWordDAO {
 	
-	boolean addWord(WordDTO word);
-	List<WordDTO> getAllWords();
-	WordDTO getWordByArabicForm(String arabic_form);
-	boolean updateWord(WordDTO word);
-	boolean deleteWord(String arabic_form);
-
+	public boolean addWord(WordDTO word);
+	public List<WordDTO> getAllWords();
+	public WordDTO getWordByArabicForm(String arabic_form);
+	public boolean deleteWord(String arabic_form);
+	public boolean upateWordMeaning(String arabic_form, String newUrduMeaning);
+	public boolean updateWordPartOfSpeech(String arabic_form, String newPartOfSpeech);
+	public boolean updateWordRootId(String arabic_form, int newRootId);
 }
