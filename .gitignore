@@ -1,1 +1,6 @@
 /bin/
+
+# Ignore the DatabaseConfig that contains credentials
+/src/com/DAL/DAO/Implementation/DatabaseConfig.java
+# fallback pattern to ignore any DatabaseConfig files
+**/DatabaseConfig.java
