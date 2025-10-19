@@ -3,7 +3,7 @@ package com.DTO;
 public class RootDTO {
 	private String rootLetters;
 	
-	public RootDTO(int id, String rootLetters) {
+	public RootDTO(String rootLetters) {
 		super();
 		this.rootLetters = rootLetters;
 	}
