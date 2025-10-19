@@ -6,7 +6,7 @@ import com.DTO.PatternDTO;
 
 public interface IPatternBO {
 	Collection<PatternDTO> getAllPatterns();
-	boolean deletPattern(PatternDTO dto);
+	boolean deletePattern(PatternDTO dto);
 	boolean updatePattern(PatternDTO dto);
 	boolean addPattern(PatternDTO dto);
 	

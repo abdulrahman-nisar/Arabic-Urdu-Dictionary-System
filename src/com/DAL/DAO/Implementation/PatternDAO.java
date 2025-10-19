@@ -73,7 +73,7 @@ public class PatternDAO implements IPatternDAO {
     }
 
     @Override
-    public boolean deletPattern(PatternDTO dto) {
+    public boolean deletePattern(PatternDTO dto) {
         String query = "DELETE FROM patterns WHERE id = ?";
 
         try (Connection connection = DatabaseConfig.getConnection();

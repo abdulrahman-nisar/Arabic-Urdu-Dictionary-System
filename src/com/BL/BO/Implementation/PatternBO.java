@@ -21,26 +21,22 @@ public class PatternBO implements IPatternBO {
 
 	@Override
 	public Collection<PatternDTO> getAllPatterns() {
-		// TODO Auto-generated method stub
-		return null;
+		return facade.getAllPatterns();
 	}
 
 	@Override
-	public boolean deletPattern(PatternDTO dto) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean deletePattern(PatternDTO dto) {
+		return facade.deletePattern(dto);
 	}
 
 	@Override
 	public boolean updatePattern(PatternDTO dto) {
-		// TODO Auto-generated method stub
-		return false;
+		return facade.updatePattern(dto);
 	}
 
 	@Override
 	public boolean addPattern(PatternDTO dto) {
-		// TODO Auto-generated method stub
-		return false;
+		return facade.addPattern(dto);
 	}
 
 }
